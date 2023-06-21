@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Konversi Suhu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type='text'] {
+        width: 200px;
+        padding: 5px;
+      }
+      button {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Konversi Suhu</h1>
+    <!-- bagian celcius -->
+
+    <label for="celsius">Celsius:</label>
+    <input type="text" id="celsius" placeholder="Masukkan suhu dalam Celsius" />
+    <button onclick="convert1()">Konversi</button>
+    <button onclick="reset1()">Reset</button>
+
+    <div id="result1"></div>
+
+    <script>
+      function convert1() {
+        var celsius = parseFloat(document.getElementById('celsius').value);
+        var fahrenheit = (celsius * 9) / 5 + 32;
+        document.getElementById('result1').innerHTML = celsius + ' Celsius = ' + fahrenheit + ' Fahrenheit';
+      }
+      function reset1() {
+        document.getElementById('celsius').value = '';
+        document.getElementById('result1').innerHTML = '';
+      }
+    </script>
+    <br />
+
+    <!-- bagian fahrenheit -->
+
+    <label for="fahrenheit">fahrenheit:</label>
+    <input type="text" id="fahrenheit" placeholder="Masukkan suhu dalam fahrenheit" />
+    <button onclick="convert2()">Konversi</button>
+    <button onclick="reset2()">Reset</button>
+
+    <div id="result2"></div>
+
+    <script>
+      function convert2() {
+        var fahrenheit = parseFloat(document.getElementById('fahrenheit').value);
+        var celsius = ((fahrenheit - 32) * 5) / 9;
+        document.getElementById('result2').innerHTML = fahrenheit + ' Fahrenheit = ' + celsius + ' Celsius';
+      }
+      function reset2() {
+        document.getElementById('fahrenheit').value = '';
+        document.getElementById('result2').innerHTML = '';
+      }
+    </script>
+  </body>
+</html>
